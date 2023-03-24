@@ -26,12 +26,13 @@ class ChatGPT3TelegramBot:
         self.openai = openai
         self.commands = [
             BotCommand(command='help', description='Show help message'),
+            #BotCommand(command='change Psychologist', description='ПОКА НЕ РАБОТАЕТ'),
             BotCommand(command='reset', description='Reset the conversation. Optionally pass high-level instructions for the conversation (e.g. /reset You are a helpful assistant)'),
             BotCommand(command='image', description='Generate image from prompt (e.g. /image cat)'),
             BotCommand(command='stats', description='Get your current usage statistics')
         ]
         self.disallowed_message = "Sorry, you are not allowed to use this bot. You can check out the source code at " \
-                                  "https://github.com/n3d1117/chatgpt-telegram-bot"
+                                  ""
         self.budget_limit_message = "Sorry, you have reached your monthly usage limit."
         self.usage = {}
 
@@ -40,13 +41,11 @@ class ChatGPT3TelegramBot:
         Shows the help menu.
         """
         commands = [f'/{command.command} - {command.description}' for command in self.commands]
-        help_text = 'I\'m a ChatGPT bot, talk to me!' + \
+        help_text = 'I\'m a ChatGPT-PsychoBot, talk to me! Well have a lot of psychologists here, but so far only one' + \
                     '\n\n' + \
                     '\n'.join(commands) + \
                     '\n\n' + \
-                    'Send me a voice message or file and I\'ll transcribe it for you!' + \
-                    '\n\n' + \
-                    "Open source at https://github.com/n3d1117/chatgpt-telegram-bot"
+                    'Send me a voice message or file and I\'ll transcribe it for you!'
         await update.message.reply_text(help_text, disable_web_page_preview=True)
 
 

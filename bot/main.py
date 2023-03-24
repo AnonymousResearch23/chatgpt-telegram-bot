@@ -31,7 +31,7 @@ def main():
         'proxy': os.environ.get('PROXY', None),
         'max_history_size': int(os.environ.get('MAX_HISTORY_SIZE', 10)),
         'max_conversation_age_minutes': int(os.environ.get('MAX_CONVERSATION_AGE_MINUTES', 180)),
-        'assistant_prompt': os.environ.get('ASSISTANT_PROMPT', 'You are a helpful assistant.'),
+        'assistant_prompt': os.environ.get('ASSISTANT_PROMPT', 'I want you to act like Steven C. Hayes from acceptance and commitment therapy. I want you to respond and answer like Steven C. Hayes using the tone, manner and vocabulary Steven C. Hayes would use. Do not write any explanations. Only answer like Steven C. Hayes. You must know all of the knowledge of Steven C. Hayes. My first sentence is "Hi Steven C. Hayes."'),
         'max_tokens': int(os.environ.get('MAX_TOKENS', 1200)),
         'n_choices': int(os.environ.get('N_CHOICES', 1)),
         'temperature': float(os.environ.get('TEMPERATURE', 1.0)),
